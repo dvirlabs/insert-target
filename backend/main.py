@@ -25,7 +25,7 @@ async def add_target(data: dict):
 
     # Update prometheus.yml with the new target
     with open("test.yml", "a") as f:
-        f.write(f"  - targets: ['{target_ip}:9090']\n`")  # Adjust port if needed 
+        f.write(f"  - targets: ['{target_ip}:9090']\n")  # Adjust port if needed 
 
     return {"message": f"Target {target_ip} added successfully!"}
 

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import './InsertTarget.css';
+
 
 const InsertTarget = () => {
   const [inputValue, setInputValue] = useState('');
@@ -24,12 +26,12 @@ const InsertTarget = () => {
       setError(null);
       setInputValue('');
     } catch (error) {
-      setError('An error occurred while fetching data.');
+      setError('An error occurred while fetching data.'); 
     }
   };
 
   return (
-    <div>
+    <div className='insert-target'>
       <input
         type="text"
         value={inputValue}
@@ -37,9 +39,9 @@ const InsertTarget = () => {
         placeholder="Enter data"
       />
       <button onClick={handleSubmit}>Submit</button>
-      {error && <p>{error}</p>}
+      {error && <p className='error'>{error}</p>}
       {responseData && (
-        <div>
+        <div className='response-data'>
           <h2>Response Data</h2>
           <p>{JSON.stringify(responseData)}</p>
         </div>
