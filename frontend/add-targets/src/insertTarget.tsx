@@ -1,6 +1,10 @@
 import { useState } from 'react';
+<<<<<<< HEAD
 import './InsertTarget.css';
 
+=======
+import './insertTarget.css'
+>>>>>>> 47cbe31c24ada730b987b88f9d17d269cb59facc
 
 const InsertTarget = () => {
   const [inputValue, setInputValue] = useState('');
@@ -26,7 +30,11 @@ const InsertTarget = () => {
       setError(null);
       setInputValue('');
     } catch (error) {
+<<<<<<< HEAD
       setError('An error occurred while fetching data.'); 
+=======
+      setError('Invalid IP Address');
+>>>>>>> 47cbe31c24ada730b987b88f9d17d269cb59facc
     }
   };
 
@@ -38,7 +46,11 @@ const InsertTarget = () => {
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Enter data"
       />
+<<<<<<< HEAD
       <button onClick={handleSubmit}>Submit</button>
+=======
+      <button className='insert-target' onClick={handleSubmit}>Submit</button>
+>>>>>>> 47cbe31c24ada730b987b88f9d17d269cb59facc
       {error && <p className='error'>{error}</p>}
       {responseData && (
         <div className='response-data'>
