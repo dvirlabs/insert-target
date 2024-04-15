@@ -57,11 +57,3 @@
     border-radius: 4px; /* Rounded corners for consistency */
     font-family: monospace; /* Use a monospace font for code */
   }
-
-  .error {
-    margin-top: 1rem; /* Add space after successful submission */
-    margin-left: 6px;
-    padding: 1rem; /* Add padding for a defined area */
-    border: 1px solid #ddd; /* Light border for separation */
-    border-radius: 4px; /* Rounded corners for a modern touch */
-  }

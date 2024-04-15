@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import os
 
 
 app = FastAPI()
@@ -13,7 +12,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-os.chdir("..")
 
 @app.post("/add_target")
 async def add_target(data: dict): 
@@ -24,11 +22,9 @@ async def add_target(data: dict):
         ip_address(target_ip)
     except ValueError:
         raise HTTPException(status_code=400, detail="Invalid IP address format")
-    
-    targets_file = "git/insert-target/prometheus-app/test.yml"
-    
+
     # Update prometheus.yml with the new target
-    with open(targets_file, "a") as f:
+    with open("test.yml", "a") as f:
         f.write(f"\n  - '{target_ip}:9090'")  # Adjust port if needed 
 
     return {"message": f"Target {target_ip} added successfully!"}
