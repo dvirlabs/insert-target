@@ -25,10 +25,10 @@ async def add_target(data: dict):
 
     # Update prometheus.yml with the new target
     with open("test.yml", "a") as f:
-        f.write(f"  - targets: ['{target_ip}:9090']\n`")  # Adjust port if needed 
+        f.write(f"\n  - '{target_ip}:9090'")  # Adjust port if needed 
 
     return {"message": f"Target {target_ip} added successfully!"}
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+    uvicorn.run("main:app", host="0.0.0.0", reload=True, port=8000)

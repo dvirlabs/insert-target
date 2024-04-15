@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './insertTarget.css'
 
 const InsertTarget = () => {
   const [inputValue, setInputValue] = useState('');
@@ -29,17 +30,17 @@ const InsertTarget = () => {
   };
 
   return (
-    <div>
+    <div className='insert-target'>
       <input
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Enter data"
       />
-      <button onClick={handleSubmit}>Submit</button>
-      {error && <p>{error}</p>}
+      <button className='insert-target' onClick={handleSubmit}>Submit</button>
+      {error && <p className='error'>{error}</p>}
       {responseData && (
-        <div>
+        <div className='response-data'>
           <h2>Response Data</h2>
           <p>{JSON.stringify(responseData)}</p>
         </div>
