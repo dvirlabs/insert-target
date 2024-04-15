@@ -25,7 +25,7 @@ const InsertTarget = () => {
       setError(null);
       setInputValue('');
     } catch (error) {
-      setError('Invalid IP Address');
+      setError('An error occurred while fetching data.');
     }
   };
 
