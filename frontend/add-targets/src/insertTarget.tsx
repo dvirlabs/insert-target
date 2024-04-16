@@ -26,6 +26,7 @@ const InsertTarget = () => {
       setInputValue('');
     } catch (error) {
       setError('An error occurred while fetching data.');
+      setResponseData(null);
     }
   };
 
@@ -38,8 +39,12 @@ const InsertTarget = () => {
         placeholder="Enter data"
       />
       <button className='insert-target' onClick={handleSubmit}>Submit</button>
-      {error && <p className='error'>{error}</p>}
-      {responseData && (
+      {error && !responseData && (
+        <div className='error'>
+          <p>{error}</p>
+          </div>
+        )}
+      {responseData && !error && (
         <div className='response-data'>
           <h2>Response Data</h2>
           <p>{JSON.stringify(responseData)}</p>

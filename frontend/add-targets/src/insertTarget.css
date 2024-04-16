@@ -35,7 +35,6 @@
   }
   
   .insert-target .error {
-    color: #dc3545; /* Red color for error messages */
     margin-top: 0.5rem; /* Add some space above error message */
   }
   
@@ -60,6 +59,7 @@
 
   .response-data {
     margin-left: 4px;
+    background-color: rgb(66, 138, 66);
   }
 
   .error {
@@ -68,4 +68,6 @@
     padding: 1rem; /* Add padding for a defined area */
     border: 1px solid #ddd; /* Light border for separation */
     border-radius: 4px; /* Rounded corners for a modern touch */
+    background-color: #dc3545;
+    color: white;
   }
