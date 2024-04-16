@@ -3,6 +3,7 @@ import './insertTarget.css'
 
 const InsertTarget = () => {
   const [inputValue, setInputValue] = useState('');
+  const [portValue, setPortValue] = useState('');
   const [responseData, setResponseData] = useState(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -13,7 +14,7 @@ const InsertTarget = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ target_ip: inputValue }),
+        body: JSON.stringify({ target_ip: inputValue, port: portValue }),
       });
 
       if (!response.ok) {
@@ -24,6 +25,7 @@ const InsertTarget = () => {
       setResponseData(data);
       setError(null);
       setInputValue('');
+      setPortValue('');
     } catch (error) {
       setError('An error occurred while fetching data.');
       setResponseData(null);
@@ -37,6 +39,12 @@ const InsertTarget = () => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Enter data"
+      />
+      <input
+        type="text"
+        value={portValue}
+        onChange={(e) => setPortValue(e.target.value)}
+        placeholder="Enter port"
       />
       <button className='insert-target' onClick={handleSubmit}>Submit</button>
       {error && !responseData && (

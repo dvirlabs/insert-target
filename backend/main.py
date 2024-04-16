@@ -14,8 +14,6 @@ app.add_middleware(
 )
 
 os.chdir = ("..")
-pwd = os.getcwd()
-print (pwd)
 
 
 @app.post("/add_target")
@@ -23,8 +21,10 @@ async def add_target(data: dict):
     # Validate IP address format
     try:
         target_ip = data.get('target_ip')
+        port = data.get('port')
         from ipaddress import ip_address
         ip_address(target_ip)
+        int(port)
     except ValueError:
         raise HTTPException(status_code=400, detail="Invalid IP address format")
     
@@ -32,7 +32,7 @@ async def add_target(data: dict):
 
     # Update prometheus.yml with the new target
     with open(targets_file, "a") as f:
-        f.write(f"\n  - '{target_ip}:9090'")  # Adjust port if needed 
+        f.write(f"\n  - '{target_ip}:{port}'")  # Adjust port if needed 
 
     return {"message": f"Target {target_ip} added successfully!"}
 
