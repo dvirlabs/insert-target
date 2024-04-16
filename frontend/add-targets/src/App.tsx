@@ -1,3 +1,4 @@
+import './App.css'
 import InsertTarget from './insertTarget';
 
 function App() {

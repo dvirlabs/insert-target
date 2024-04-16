@@ -20,6 +20,7 @@
   }
   
   .insert-target button {
+    margin-top: 15px;
     margin-left: 0.5rem; /* Add some space between input and button */
     padding: 0.75rem 1.5rem; /* Adjust padding for a comfortable size */
     border: none; /* Remove default button border */
@@ -58,7 +59,7 @@
   }
 
   .response-data {
-    margin-left: 4px;
+    margin-left: 50px;
     background-color: rgb(66, 138, 66);
   }
 
