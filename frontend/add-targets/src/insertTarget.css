@@ -65,7 +65,7 @@
 
   .error {
     margin-top: 1rem; /* Add space after successful submission */
-    margin-left: 6px;
+    margin-left: 50px;
     padding: 1rem; /* Add padding for a defined area */
     border: 1px solid #ddd; /* Light border for separation */
     border-radius: 4px; /* Rounded corners for a modern touch */
