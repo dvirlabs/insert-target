@@ -38,14 +38,14 @@ const InsertTarget = () => {
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Enter data"
+        placeholder="Insert IP"
         className='fileds'
       />
       <input
         type="text"
         value={portValue}
         onChange={(e) => setPortValue(e.target.value)}
-        placeholder="Enter port"
+        placeholder="Insert Port"
         className='fileds'
       />
       <button className='insert-target' onClick={handleSubmit}>Submit</button>
