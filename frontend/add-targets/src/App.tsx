@@ -1,12 +1,16 @@
 import './App.css'
 import InsertTarget from './insertTarget';
-import Title from './title';
+import RemoveTarget from './removeTarget';
+import InsertIpTitle from './insertIpTitle';
+import RemoveIpTitle from './removeIpTitle';
 
 function App() {
   return (
     <div className="App">
-      <Title />
+      <InsertIpTitle />
       <InsertTarget />
+      <RemoveIpTitle />
+      <RemoveTarget />
     </div>
   );
 }

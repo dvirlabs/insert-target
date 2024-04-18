@@ -1,4 +1,4 @@
-const Title = () => {
+const InsertIpTitle = () => {
   return (
     <div>
       <h1>Insert IP and Port to add target to Prometheus:</h1>
@@ -6,4 +6,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default InsertIpTitle;
