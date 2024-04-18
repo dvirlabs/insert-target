@@ -1,0 +1,14 @@
+add-targets@0.0.0 C:\Users\dvirl\OneDrive\Desktop\git\insert-target-main\insert-target\frontend\add-targets
+├── @types/react-dom@18.2.25
+├── @types/react@18.2.77
+├── @typescript-eslint/eslint-plugin@7.6.0
+├── @typescript-eslint/parser@7.6.0
+├── @vitejs/plugin-react@4.2.1
+├── eslint-plugin-react-hooks@4.6.0
+├── eslint-plugin-react-refresh@0.4.6
+├── eslint@8.57.0
+├── react-dom@18.2.0
+├── react@18.2.0
+├── typescript@5.4.5
+└── vite@5.2.9
+
