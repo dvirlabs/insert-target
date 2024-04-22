@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import os
+import requests
 
 
 app = FastAPI()
@@ -64,6 +65,33 @@ async def remove_target(data: dict):
 
     return {"message": f"Target {target_ip} removed successfully!"}
 
+prometheus_url = "http://localhost:9090/api/v1/targets"
+
+@app.get("/get_targets")
+async def get_prometheus_targets():
+    try:
+        # Define the parameters for the query
+        params = {
+            "limit": 10
+        }
+        
+        # Make the request to the Prometheus API
+        response = requests.get(prometheus_url, params=params)
+
+        # Check if the request was successful
+        if response.status_code == 200:
+            # Extract and return the JSON response
+            data = response.json()
+            targets = data["data"]["activeTargets"]
+            scrape_urls = [target["discoveredLabels"]["__address__"] for target in targets]
+            return scrape_urls
+        else:
+            # Raise an HTTPException with the error status code and message
+            raise HTTPException(status_code=response.status_code, detail=response.text)
+    except Exception as e:
+        # If an exception occurs, raise an HTTPException with status code 500 and the exception message
+        raise HTTPException(status_code=500, detail=str(e))
+    
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", reload=True, port=8000)
