@@ -1,8 +1,9 @@
-import './App.css'
+import './style/App.css'
 import InsertTarget from './insertTarget';
 import RemoveTarget from './removeTarget';
 import InsertIpTitle from './insertIpTitle';
 import RemoveIpTitle from './removeIpTitle';
+import TargetsWindow from './loadTargets';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <InsertTarget />
       <RemoveIpTitle />
       <RemoveTarget />
+      <TargetsWindow />
     </div>
   );
 }

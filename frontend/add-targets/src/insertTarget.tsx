@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './insertTarget.css'
+import './style/insertTarget.css'
 
 const InsertTarget = () => {
   const [inputValue, setInputValue] = useState('');
